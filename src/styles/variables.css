@@ -1,0 +1,202 @@
+/* =========================================
+   DSA Platform — Design System Variables
+   ========================================= */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ── Core Palette — Dark (default) ── */
+  --bg-base:        #0D1117;
+  --bg-sidebar:     #0D1117;
+  --bg-surface:     #161B22;
+  --bg-surface-2:   #1C2231;
+  --bg-hover:       #1C2231;
+  --bg-active:      #21293A;
+  --bg-overlay:     rgba(13,17,23,0.85);
+
+  --border:         #21293A;
+  --border-subtle:  #1A2130;
+  --border-focus:   #8B9CF6;
+
+  --text-primary:   #E6EDF3;
+  --text-secondary: #8D96A3;
+  --text-muted:     #55626F;
+
+  --accent:         #8B9CF6;
+  --accent-hover:   #A5B2F8;
+  --accent-bg:      rgba(139,156,246,0.1);
+  --accent-bg-hover:rgba(139,156,246,0.15);
+
+  --green:          #3FB950;
+  --green-bg:       rgba(63,185,80,0.1);
+  --amber:          #D29922;
+  --amber-bg:       rgba(210,153,34,0.1);
+  --red:            #F85149;
+  --red-bg:         rgba(248,81,73,0.1);
+  --purple:         #A78BFA;
+  --purple-bg:      rgba(167,139,250,0.1);
+  --cyan:           #38BDF8;
+  --cyan-bg:        rgba(56,189,248,0.1);
+
+  /* ── Difficulty ── */
+  --easy:           #3FB950;
+  --easy-bg:        rgba(63,185,80,0.08);
+  --medium:         #D29922;
+  --medium-bg:      rgba(210,153,34,0.08);
+  --hard:           #F85149;
+  --hard-bg:        rgba(248,81,73,0.08);
+
+  /* ── Sizing ── */
+  --sidebar-w:      256px;
+  --header-h:       56px;
+  --content-max:    1100px;
+
+  /* ── Radius ── */
+  --r-xs:  3px;
+  --r-sm:  6px;
+  --r-md:  8px;
+  --r-lg:  12px;
+  --r-xl:  16px;
+  --r-pill:9999px;
+
+  /* ── Shadow ── */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.6);
+
+  /* ── Typography ── */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+
+  /* ── Type Scale ── */
+  --text-xs:   0.70rem;
+  --text-sm:   0.813rem;
+  --text-base: 0.9rem;
+  --text-md:   1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+
+  /* ── Spacing ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ── Motion ── */
+  --ease:          cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out:      cubic-bezier(0, 0, 0.3, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+  --transition:    var(--duration-base) var(--ease);
+
+  /* Backward compat aliases */
+  --color-bg-base:        var(--bg-base);
+  --color-bg-elevated:    var(--bg-surface);
+  --color-bg-overlay:     var(--bg-surface-2);
+  --color-bg-hover:       var(--bg-hover);
+  --color-bg-card:        var(--bg-surface);
+  --color-text-primary:   var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted:     var(--text-muted);
+  --color-accent:         var(--accent);
+  --color-accent-hover:   var(--accent-hover);
+  --color-green:          var(--green);
+  --color-orange:         var(--amber);
+  --color-red:            var(--red);
+  --color-purple:         var(--purple);
+  --color-border:         var(--border);
+  --color-border-subtle:  var(--border-subtle);
+  --color-easy:           var(--easy);
+  --color-medium:         var(--medium);
+  --color-hard:           var(--hard);
+  --sidebar-width:        var(--sidebar-w);
+  --header-height:        var(--header-h);
+  --content-max-w:        var(--content-max);
+  --radius-sm:            var(--r-sm);
+  --radius-md:            var(--r-md);
+  --radius-lg:            var(--r-lg);
+  --radius-pill:          var(--r-pill);
+  --shadow-sm:            var(--shadow-sm);
+  --shadow-md:            var(--shadow-md);
+  --shadow-lg:            var(--shadow-lg);
+  --font-mono:            var(--font-mono);
+  --font-sans:            var(--font-sans);
+}
+
+/* ── Light Theme ── */
+[data-theme='light'] {
+  --bg-base:        #F7F8FA;
+  --bg-sidebar:     #FFFFFF;
+  --bg-surface:     #FFFFFF;
+  --bg-surface-2:   #F0F2F5;
+  --bg-hover:       #EEF0F4;
+  --bg-active:      #E8EBF0;
+  --bg-overlay:     rgba(247,248,250,0.92);
+
+  --border:         #E4E7EC;
+  --border-subtle:  #EEF0F4;
+  --border-focus:   #5969D9;
+
+  --text-primary:   #111827;
+  --text-secondary: #4B5563;
+  --text-muted:     #9CA3AF;
+
+  --accent:         #5969D9;
+  --accent-hover:   #4A58C7;
+  --accent-bg:      rgba(89,105,217,0.08);
+  --accent-bg-hover:rgba(89,105,217,0.12);
+
+  --green:          #16A34A;
+  --green-bg:       rgba(22,163,74,0.08);
+  --amber:          #B45309;
+  --amber-bg:       rgba(180,83,9,0.08);
+  --red:            #DC2626;
+  --red-bg:         rgba(220,38,38,0.08);
+  --purple:         #7C3AED;
+  --purple-bg:      rgba(124,58,237,0.08);
+  --cyan:           #0284C7;
+  --cyan-bg:        rgba(2,132,199,0.08);
+
+  --easy:           #16A34A;
+  --easy-bg:        rgba(22,163,74,0.08);
+  --medium:         #B45309;
+  --medium-bg:      rgba(180,83,9,0.08);
+  --hard:           #DC2626;
+  --hard-bg:        rgba(220,38,38,0.08);
+
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.14);
+
+  /* Light compat aliases */
+  --color-bg-base:        var(--bg-base);
+  --color-bg-elevated:    var(--bg-surface);
+  --color-bg-overlay:     var(--bg-surface-2);
+  --color-bg-hover:       var(--bg-hover);
+  --color-bg-card:        var(--bg-surface);
+  --color-text-primary:   var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted:     var(--text-muted);
+  --color-accent:         var(--accent);
+  --color-accent-hover:   var(--accent-hover);
+  --color-green:          var(--green);
+  --color-orange:         var(--amber);
+  --color-red:            var(--red);
+  --color-purple:         var(--purple);
+  --color-border:         var(--border);
+  --color-border-subtle:  var(--border-subtle);
+  --color-easy:           var(--easy);
+  --color-medium:         var(--medium);
+  --color-hard:           var(--hard);
+}

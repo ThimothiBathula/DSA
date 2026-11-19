@@ -1,0 +1,146 @@
+/* =========================================
+   DSA Platform — Responsive
+   ========================================= */
+
+/* ── Large desktop ── */
+@media (min-width: 1440px) {
+  .page-area { padding: 28px 40px; }
+  .stats-grid { grid-template-columns: repeat(5, 1fr); }
+  :root { --content-max: 1200px; }
+}
+
+/* ── Standard desktop ── */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .stats-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* ── Laptop / compact ── */
+@media (max-width: 1100px) {
+  :root { --sidebar-w: 220px; }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  /* hide langs column on small laptop */
+  .problems-table__header .col-langs { display: none; }
+  .problem-row .code-langs { display: none; }
+}
+
+/* ── Tablet portrait ── */
+@media (max-width: 900px) {
+  :root {
+    --sidebar-w: 268px;
+    --header-h: 52px;
+  }
+
+  /* Sidebar becomes a drawer */
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: none;
+    border-right: none;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hamburger-btn { display: flex; }
+  .main-content { margin-left: 0 !important; }
+  .top-header { padding: 0 14px; }
+  .page-area { padding: 18px 16px; }
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+
+  /* Problems table: collapse to cards */
+  .problems-table__header { display: none; }
+  .problem-row {
+    display: flex; flex-direction: column;
+    gap: 8px; padding: 14px 16px;
+  }
+  .problem-row__top {
+    display: flex; align-items: center; gap: 10px; width: 100%;
+  }
+  .problem-row__meta {
+    display: flex; align-items: center; gap: 8px;
+    padding-left: 28px;
+    flex-wrap: wrap;
+  }
+  .problem-row__title { white-space: normal; }
+
+  /* Code block */
+  .code-tabs-bar { padding: 0 10px; overflow-x: auto; gap: 0; }
+  .code-tab-btn { padding: 10px 10px; font-size: 0.8rem; }
+
+  /* Complexity */
+  .complexity-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Problem nav */
+  .prob-nav { flex-wrap: wrap; gap: 8px; }
+  .prob-nav__btn { max-width: 100%; }
+
+  /* Filter bar */
+  .filter-search { min-width: 100%; }
+
+  /* search */
+  .search-wrap { max-width: none; flex: 1; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .page-area { padding: 14px 12px; }
+  .top-header { padding: 0 12px; gap: 8px; }
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stat-card { padding: 12px 14px; }
+  .stat-card__value { font-size: 1.5rem; }
+  .stat-card__icon { width: 28px; height: 28px; font-size: 0.85rem; }
+
+  .page-header__title { font-size: 1.1rem; }
+  .prob-detail__title { font-size: 1.25rem; }
+
+  .card { padding: 14px; border-radius: var(--r-md); }
+  .complexity-grid { grid-template-columns: 1fr; }
+  .filter-bar { flex-direction: column; }
+  .filter-select, .filter-toggle-btn { width: 100%; justify-content: center; }
+
+  pre.code-block { font-size: 0.75rem; padding: 14px 12px; }
+
+  .prob-nav { flex-direction: column; gap: 8px; }
+  .prob-nav__btn { max-width: 100%; width: 100%; justify-content: center; }
+
+  .btn { font-size: 0.8rem; }
+
+  .toast-container { left: 12px; right: 12px; bottom: 12px; }
+  .toast { min-width: auto; width: 100%; }
+
+  .bm-grid { grid-template-columns: 1fr; }
+
+  .search-kbd { display: none; }
+
+  .dashboard-hero h1 { font-size: var(--text-xl); }
+  .dashboard-hero p { font-size: var(--text-sm); }
+
+  .prob-topbar { gap: 8px; }
+}
+
+/* ── Very small ── */
+@media (max-width: 375px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .sidebar__logo-name { display: none; }
+  .page-area { padding: 12px 10px; }
+  .prob-detail__title { font-size: 1.1rem; }
+  pre.code-block { font-size: 0.72rem; }
+}
+
+@media (max-width: 320px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .header-actions .header-icon-btn + .header-icon-btn { display: none; }
+}
+
+/* ── Print ── */
+@media print {
+  .sidebar, .top-header, .prob-nav,
+  .problem-actions, .hamburger-btn { display: none !important; }
+  .main-content { margin-left: 0; }
+  .card { break-inside: avoid; }
+  pre.code-block { max-height: none; white-space: pre-wrap; overflow: visible; }
+}
