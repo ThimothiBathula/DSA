@@ -4,6 +4,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext.jsx';
 import { TOPICS_DATA } from '../data/problems.js';
+import { ACTIVE_PROBLEMS } from '../data/activeProblems.js';
 import { computeStats } from '../utils/progressUtils.js';
 import '../styles/layout.css';
 
@@ -78,22 +79,25 @@ export default function Sidebar() {
           {/* Topics section */}
           <div className="sidebar__section">
             <div className="sidebar__section-title">Topics</div>
-            {TOPICS_DATA.map(t => (
-              <SidebarLink
-                key={t.key}
-                to={`/topics/${t.slug}`}
-                label={t.display}
-                icon={NAV_ICONS.topic}
-                badge={t.count}
-                onClick={handleNav}
-              />
-            ))}
+            {TOPICS_DATA.map(t => {
+              const topicCount = ACTIVE_PROBLEMS.filter(p => p.topic === t.key).length;
+              return (
+                <SidebarLink
+                  key={t.key}
+                  to={`/topics/${t.slug}`}
+                  label={t.display}
+                  icon={NAV_ICONS.topic}
+                  badge={topicCount || undefined}
+                  onClick={handleNav}
+                />
+              );
+            })}
           </div>
         </nav>
 
         <div className="sidebar__footer">
           <span style={{ color: 'var(--text-muted)', fontSize: '0.65rem' }}>
-            {stats.total} problems · 19 topics
+            {ACTIVE_PROBLEMS.length} problems · {TOPICS_DATA.length} topics
           </span>
         </div>
       </aside>
